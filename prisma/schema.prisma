@@ -22,3 +22,13 @@ model Person {
   name   String
   avatar String?
 }
+
+model CartItem {
+  id         Int      @id @default(autoincrement())
+  productId  Int      
+  name       String   
+  type       String?  
+  unitPrice  Int      
+  quantity   Int      @default(1)
+  createdAt  DateTime @default(now())
+}
