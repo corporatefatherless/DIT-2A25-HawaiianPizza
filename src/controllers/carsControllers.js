@@ -1,13 +1,13 @@
-const carsModels = require('../models/carsModels.js');
+const carsModels = require('../models/carsModels');
 
 async function getAllCars(req, res) {
   const cars = await carsModels.getAllCars();
   res.json(cars);
 }
 
-async function getCarByProductId(req, res) {
-  const productId = req.params.productId;
-  const car = await carsModels.getCarByProductId(productId);
+async function getCar(req, res) {
+  const carsid = req.params.carsid;
+  const car = await carsModels.getCarByCarsId(carsid);
   res.json(car);
 }
 
@@ -18,6 +18,6 @@ async function createCar(req, res) {
 
 module.exports = {
   getAllCars,
-  getCarByProductId,
+  getCar,
   createCar
 };
