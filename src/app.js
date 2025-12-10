@@ -15,6 +15,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+//cars page routes
+app.use('/cars', require('./routers/carsRoutes'));
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/somethings', somethingRouter);
 app.use('/persons', personRouter);
