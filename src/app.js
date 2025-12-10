@@ -8,6 +8,9 @@ const path = require('path');
 const app = express();
 app.use(express.json());
 
+//cars page routes
+app.use('/cars', require('./routers/carsRoutes'));
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/somethings', somethingRouter);
 app.use('/persons', personRouter);
