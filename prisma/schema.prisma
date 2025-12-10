@@ -1,9 +1,5 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
-  // previewFeatures = ["driverAdapters"]
 }
 
 datasource db {
@@ -11,23 +7,23 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Something {
-  id       Int              @id @default(autoincrement())
-  name     String
+model carParts {
+  id            Int     @id @default(autoincrement())
+  name          String
+  type          String
+  price_display String
+  description   String
+  partId        String?
 }
 
-model Person {
-  id     Int              @id @default(autoincrement())
-  email  String           @unique
-  name   String
-  avatar String?
-}
-
-//Category model for filtering items by category, assisted by AI
-model Category {
-  id    Int     @id @default(autoincrement())
-  name  String 
-  items Item[]
+model cars {
+  id            Int    @id @default(autoincrement())
+  name          String
+  type          String
+  power         String
+  price_display String
+  description   String
+  carsid        String
 }
 
 //Item model for items in the category, assisted by AI
